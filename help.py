@@ -11,5 +11,8 @@ print('Ponto 2D: ', x, ' , ', y)
 print(type(x))
 print(type(y))
 
+lista = [1,2,3,1,2]
+conjunto = set(lista)
 
-
+print('conjunto: ', conjunto)
+print('lista: ', lista)
