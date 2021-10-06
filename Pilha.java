@@ -4,8 +4,8 @@ public class Pilha{
     int top;
 
     public Pilha(int max){
-        S = new int[max];
-        top = -1;
+        this.S = new int[max];
+        this.top = -1;
     }
 
     boolean estaVazia(){
@@ -13,13 +13,13 @@ public class Pilha{
     }
 
     // PUSH
-    void inserir(int x){
+    void empilheirar(int x){
         top = top +1;
         S[top] = x;
     }
 
     // POP
-    int remover() throws Exception{
+    int desempilheirar() throws Exception{
         if(estaVazia()) throw new Exception(); 
         else{
             top = top -1;
@@ -30,15 +30,15 @@ public class Pilha{
 
     public static void main(String[] args) {
         Pilha p = new Pilha(10);
-        p.inserir(10);
-        p.inserir(3);
-        p.inserir(9);
+        p.empilheirar(10);
+        p.empilheirar(3);
+        p.empilheirar(9);
         try {
-            p.remover();
+            p.desempilheirar();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        p.inserir(30);
+        p.empilheirar(30);
        System.out.println(); 
     }
 }
