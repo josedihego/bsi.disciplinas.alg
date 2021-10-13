@@ -1,10 +1,10 @@
 
-public class Pilha{
-    int [] S;
+public class Pilha<T>{
+    T [] S;
     int top;
 
     public Pilha(int max){
-        this.S = new int[max];
+        this.S = new T[max];
         this.top = -1;
     }
 
