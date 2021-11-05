@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class No:
     def __init__(self, chave):
         self.chave = chave
@@ -24,6 +26,13 @@ class Lista:
         if para_rem.prox != None:
             para_rem.prox.ant = para_rem.ant
 
+    def buscar(self, chave):
+       x = self.inicio
+       while(x!=None and x.chave !=chave):
+           x = x.prox
+       return x    
+
+
 
 l = Lista()
 x = No(3.55)
@@ -33,4 +42,5 @@ l.inserir(x)
 l.inserir(No(22))
 l.remover(x)
 l.inserir(No('João'))
-
+print(l.buscar('Maria').chave)
+print(l.buscar('Carlos'))

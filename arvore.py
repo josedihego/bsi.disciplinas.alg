@@ -23,6 +23,21 @@ class Arvore:
             print(str(x))
             self.caminhar_ordem(x.dir)
 
+    def caminhar_pos_ordem(self, x):
+        if(x != None):
+            self.caminhar_pos_ordem(x.esq)
+            self.caminhar_pos_ordem(x.dir)
+            print(str(x))
+
+    def buscar(self, x, chave):
+        if x == None or x.chave == chave:
+            return x
+        else:    
+            if chave < x.chave:
+                self.buscar(x.esq, chave)
+            else:
+                self.buscar(x.dir,chave)        
+
 no30 = No(30)
 no20  = No(20)
 no40 = No(40)
@@ -38,3 +53,5 @@ no40.dir = no42
 no42.p = no40
 
 arvore.caminhar_ordem(arvore.raiz)
+y = arvore.buscar(arvore.raiz, 42)
+print('Resultado da busca:'+ str(y))
